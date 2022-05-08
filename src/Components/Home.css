@@ -1,0 +1,72 @@
+.home-container {
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    padding-top: 1rem;
+}
+
+.author-image-container {
+    min-height: 80vh;
+    width: 100%;
+    /* background-color: #cccccc80; */
+    flex: 1;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.author-image-container img {
+    width: 50%;
+    border-radius: 1rem;
+    box-shadow: 25px 10px 25px 2px rgba(0, 0, 0, .5);
+}
+
+.author-image-container h3 {
+    width: 50%;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.author-image-container h3::first-letter {
+    color:purple;
+
+}
+
+.name-dash {
+    display: inline-block;
+    min-width: 5rem;
+    height: 0px;
+    margin-right: 2rem;
+    border: 1px solid #000;
+}
+
+.home-author-name-container {
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    width:50%;
+    margin-top: 1rem;
+}
+
+.home-quote {
+    flex: 2;
+    text-align: left;
+    font-size: 4rem;
+    margin-right: 2rem;
+}
+
+
+.home-quote::first-letter {
+    color: purple;
+    font-size: 5rem;
+}
+.quote-marks {
+    font-size: 5rem;
+    font-weight: bold;
+    color: purple;
+}
