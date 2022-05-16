@@ -1,8 +1,10 @@
 import { useRef } from 'react';
 import { BrowserRouter, NavLink, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
-import Home from './Components/Home';
-import QuotesList from './Components/QuotesList';
+import Home from './Components/Pages/Home';
+import QuotesList from './Components/Pages/QuotesList';
+import AuthorList from './Components/Pages/AuthorList';
+import CategoriesList from './Components/Pages/CategoriesList';
 
 function App() {
   let sideTitle = useRef();
@@ -26,7 +28,7 @@ function App() {
         <header className="App-header">
             <h1>Eve<span>Quote</span></h1>
             <nav className="App-nav">
-              <NavLink exact to="/">Home</NavLink>
+              <NavLink to="/">Home</NavLink>
               <NavLink to="/quotes">Quotes</NavLink>
               <NavLink to="/authors">Authors</NavLink>
               <NavLink to="/categories">Categories</NavLink>
@@ -42,7 +44,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home updateTitle={updateTitle} updateSubTitle={updateSubTitle}/> } />
             <Route path="/quotes" element={<QuotesList updateTitle={updateTitle} updateSubTitle={updateSubTitle} />}/>
+            <Route path="/authors" element={<AuthorList updateTitle={updateTitle} updateSubTitle={updateSubTitle} />}/>
+            <Route path="/categories" element={<CategoriesList updateTitle={updateTitle} updateSubTitle={updateSubTitle} />}/>
             <Route path="*" element={<Navigate to="/"/>}/>
+
           </Routes>
         </main>
       </BrowserRouter>

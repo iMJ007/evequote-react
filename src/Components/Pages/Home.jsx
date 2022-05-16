@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css';
+import '../Animation.css'
 
 export default function Home({updateTitle, updateSubTitle}) {
-    let [url, setUrl] = useState('http://localhost:3000/quotes');
+    let [url, setUrl] = useState('https://evequote-json-server.herokuapp.com/quotes');
     let [quote, setQuote] = useState(null);
     let [isPending, setIsPending] = useState(true);
-    let [error, setError] = useState(null);
+    let [error, setError] = useState(false);
 
     useEffect(() => {
         const controller = new AbortController();
         const fetchData = async  () => {
             setIsPending(true);
+            setError(false);
 
             try {
-                const response = await fetch(`http://localhost:3000/quotes?_start=${Math.floor(Math.random() * 2205)}&_limit=1`, { signal : controller.signal});
+                
+                const response = await fetch(`https://evequote-json-server.herokuapp.com/quotes?_start=${Math.floor(Math.random() * 2205)}&_limit=1`, { signal : controller.signal});
                 if(!response.ok){
                     throw new Error(response.statusText);
                 }
                 const fetchedQuote = (await response.json())[0];
-                const authorResponse = await fetch(`http://localhost:3000/authors?_start=${fetchedQuote.authorIndex}&_limit=1`, { signal : controller.signal})
+                const authorResponse = await fetch(`https://evequote-json-server.herokuapp.com/authors?_start=${fetchedQuote.authorIndex}&_limit=1`, { signal : controller.signal})
                 if(!authorResponse.ok){
                     throw new Error(authorResponse.statusText);
                 }
@@ -26,7 +29,7 @@ export default function Home({updateTitle, updateSubTitle}) {
                 // console.log(fetchedQuote);
                 setIsPending(false);
                 setQuote(fetchedQuote);
-                setError(null);
+                setError(false);
             } catch (err) {
                 setIsPending(false);
                 setError('Error fetching data');

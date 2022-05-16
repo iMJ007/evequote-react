@@ -7,6 +7,9 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 .App-header {
@@ -19,8 +22,9 @@
   padding-right: 16px;
   position: sticky;
   top: 0;
+  left: 0;
   background-color: #fff;
-  z-index: 1;
+  z-index: 100;
 }
 
 .App-nav {
@@ -33,18 +37,23 @@
   text-decoration: none;
   text-transform: uppercase;
   color: #AAA;
-  transition: 300ms;
   padding: 1em;
   font-size: 1.05rem;
+  font-weight: 300;
+  transition: 500ms;
 }
 
 .App-nav a:hover {
   color: #555;
+  font-weight: 600;
+  transition: 500ms;
 }
 
 .App-nav a.active {
   border-bottom: 1px solid purple;
   color: purple;
+  font-weight: 900;
+  transition: 500ms;
 }
 
 h1 span {
@@ -61,10 +70,15 @@ h1 span {
   flex-direction: row;
   justify-content: space-between;
   writing-mode: vertical-lr;
+  background-color: #fff;
   padding: .5rem;
   border-right: 1px solid #ccc;
   font-weight: bold;
-  max-height: 87vh;
+  height: 87vh;
+  position: sticky;
+  top: 10vh;
+  left: 0;
+  z-index: 100;
 }
 
 .vertical-side-title {
