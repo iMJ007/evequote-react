@@ -2,6 +2,7 @@
   text-align: center;
   /* background-color: #282c34; */
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -91,4 +92,82 @@ h1 span {
   color: #800080;
   letter-spacing: 0.15rem;
   margin-bottom: 1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+  /* .app-body {
+    flex-direction: column;
+  } */
+
+  .App-title{
+    font-size: 1.5rem
+  }
+
+  .vertical-side-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    writing-mode: horizontal-tb;
+    background-color: #fff;
+    padding: .5rem;
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    top: unset;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 -1px 5px 1px rgba(0, 0, 0, .1)
+  }
+
+  .vertical-side-bottom {
+    color: #800080;
+    letter-spacing: 0.15rem;
+    margin-right: 1rem;
+  }
+
+  .vertical-side-title {
+    text-align: left;
+  }
+
+  .App-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    gap: 0%;
+  }
+
+  .App-nav {
+    padding-left: 3rem;
+    padding-right: 16px;
+    min-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none; /* The most elegant way for Firefox */
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+  }
+
+  /* Optional: show position indicator in red */
+  ::-webkit-scrollbar-thumb {
+    background: #00000000;
+  }
+
+  .App-header p {
+    display: none;
+  }
+
+  .App-nav a {
+    font-size: 1rem;
+  }
 }

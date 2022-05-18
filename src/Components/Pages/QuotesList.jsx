@@ -30,7 +30,7 @@ export default function QuotesList({ updateTitle, updateSubTitle, selectedAuthor
 	};
 
 	const handlePaginate = (e) => {
-		if (e.target.id == "next") {
+		if (e.target.id === "next") {
 			setPage(page + 1);
 		} else {
 			setPage(page - 1);
@@ -38,10 +38,9 @@ export default function QuotesList({ updateTitle, updateSubTitle, selectedAuthor
 	};
 
 	const breakpointColumnsObj = {
-		default: selectedAuthor ? 3 : selectedCategory ? 2 : 5,
-		1100: 4,
-		700: 2,
-		500: 1,
+		default: selectedAuthor ? 3 : selectedCategory ? 2 : 4,
+		1100: 3,
+		700: 1
 	};
     
 	return (
@@ -69,7 +68,7 @@ export default function QuotesList({ updateTitle, updateSubTitle, selectedAuthor
 							quote={quote}
 							index={index}
 							copy={copy}
-							
+							key={index}
 						/>
 					))}
 				</Masonry>

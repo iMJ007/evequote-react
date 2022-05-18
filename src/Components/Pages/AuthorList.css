@@ -62,3 +62,66 @@
     border-left: 1px solid #80008022;
     background-color: #FAFAFA;
 }
+
+@media screen and (max-width: 1000px){
+    /* .author-quotes {
+        position: absolute;
+        z-index: 2;
+    } */
+
+    .author-list{
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .author-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .horizontal-row {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .author-root {
+        flex-direction: column;
+        align-items: flex-start;
+        overflow: auto;
+    }
+
+    .author-holder {
+        flex-direction: column;
+        padding-left: unset;
+    }
+
+    .author-details-holder {
+        width: 20ch;
+        padding-top: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        text-align: center;
+    }
+
+    .author-details-holder h2 {
+        font-size: 1.2rem;
+        margin-top: .5rem;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+
+    .author-details-holder h4 {
+        font-size: .9rem;
+        margin-top: .5rem;
+        padding-top: 0px;
+        margin-bottom: .5rem;
+    }
+
+    .author-image {
+        width: 4rem;
+        height: 4rem;
+        margin-right: unset;
+        margin-bottom: -3rem;
+    }
+    
+}

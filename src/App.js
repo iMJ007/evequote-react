@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { BrowserRouter, NavLink, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import Home from './Components/Pages/Home';
@@ -22,16 +22,23 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    document.body.style.zoom = "100%";
+  }, []);
+
+  const scrollNavHorizontal = (e) => {
+    e.currentTarget.scrollIntoView({behavior: 'smooth', block: 'start'})
+  }
   return (
     <div className="App">
       <BrowserRouter>
         <header className="App-header">
-            <h1>Eve<span>Quote</span></h1>
+            <h1 className="App-title">Eve<span>Quote</span></h1>
             <nav className="App-nav">
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/quotes">Quotes</NavLink>
-              <NavLink to="/authors">Authors</NavLink>
-              <NavLink to="/categories">Categories</NavLink>
+              <NavLink to="/" onClick={scrollNavHorizontal}>Home</NavLink>
+              <NavLink to="/quotes" onClick={scrollNavHorizontal}>Quotes</NavLink>
+              <NavLink to="/authors" onClick={scrollNavHorizontal}>Authors</NavLink>
+              <NavLink to="/categories" onClick={scrollNavHorizontal}>Categories</NavLink>
             </nav>
             <p>🍎 🍏 🍊</p>
         </header>

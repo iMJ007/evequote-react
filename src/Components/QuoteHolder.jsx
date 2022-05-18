@@ -20,7 +20,7 @@ export default function QuoteHolder({ quote, index, author, copy }) {
 		>
 			<div className="copy">Click anywhere to copy</div>
 			<p>{quote.quote}</p>
-			<img src={author.picUrl} />
+			<img src={author.picUrl} alt={author.name} />
 			<h6>{author.name}</h6>
 		</div>
 	);

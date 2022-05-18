@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import "./AuthorList.css";
 import "../Animation.css";
 import QuotesList from "./QuotesList";
+
 
 export default function Authors({ updateTitle, updateSubTitle }) {
 	let {
@@ -11,7 +12,18 @@ export default function Authors({ updateTitle, updateSubTitle }) {
 		error,
 	} = useFetch("https://evequote-json-server.herokuapp.com/authors");
 
+	let authorListRef = useRef();
+
 	let [selectedAuthor, setSelectedAuthor] = useState(null);
+
+	useEffect(() => {
+		if (selectedAuthor){
+			if (!authorListRef.current.classList.contains("horizontal-row")) {
+				// TODO hide author list
+				authorListRef.current.classList.add("horizontal-row");
+			}
+		}
+	}, [selectedAuthor])
 
 	const handleHover = (e) => {
 		e.currentTarget
@@ -36,7 +48,7 @@ export default function Authors({ updateTitle, updateSubTitle }) {
 		<div className="author-root">
 			{updateTitle && !selectedAuthor && updateTitle("Authors")}
 			{updateSubTitle && !selectedAuthor && updateSubTitle("")}
-			<div className="author-list">
+			<div className="author-list" ref={authorListRef}>
 				{authors &&
 					authors.map((author, index) => (
 						<div
@@ -45,13 +57,17 @@ export default function Authors({ updateTitle, updateSubTitle }) {
 							onMouseEnter={handleHover}
 							onMouseLeave={handleHoverExit}
 							onClick={(e) => {
-								updateTitle(author.name + '\'s Quotes');
+								updateTitle(author.name + "'s Quotes");
 								author.authorIndex = index;
 								setSelectedAuthor(author);
 								window.scroll({
 									top: 0,
 									left: 0,
 									behavior: "smooth",
+								});
+								e.currentTarget.scrollIntoView({
+									behavior: "smooth",
+									block: "start",
 								});
 							}}
 						>

@@ -22,6 +22,7 @@
 .quotes-list-col {
     padding-left: 1rem;
     /* gutter size */
+    background-clip: padding-box;
 }
 
 .toast {
@@ -69,4 +70,24 @@
 
 .paginate-button:hover {
     background-color: #900090;
+}
+
+@media screen and (max-width: 768px) {
+    .quotes-list-root {
+        margin-bottom: 4rem;
+    }
+    .paginate-button-container {
+        position: fixed;
+        bottom: 4rem;
+        margin: 1rem;
+    }
+
+    .paginate-button {
+        width: 2rem;
+        height: 2rem;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 1.5rem;
+    }
 }

@@ -1,10 +1,12 @@
 .home-container {
+    position: relative;
     min-height: 80vh;
     width: 100%;
     display: flex;
     justify-content:center;
     align-items:center;
     padding-top: 1rem;
+    gap: 1rem;
     animation-name: fade-in;
     animation-duration: 1000ms;
 }
@@ -14,7 +16,6 @@
     width: 100%;
     /* background-color: #cccccc80; */
     flex: 1;
-    margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,4 +72,42 @@
     font-size: 5rem;
     font-weight: bold;
     color: purple;
+}
+
+@media screen and (max-width: 768px) {
+    .home-container {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: unset;
+    }
+
+    .author-image-container {
+        min-height: unset;
+        max-height: 15vh;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .author-image-container img {
+        width: 35%;
+        border-radius: 1rem;
+        box-shadow: 20px 15px 35px 2px rgba(0, 0, 0, .20);
+    }
+
+    .home-quote {
+        flex: unset;
+        text-align: left;
+        font-size: 2rem;
+        margin-right: unset;
+        padding-bottom: 2rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        text-align: center;
+    }
+
+    .home-quote::first-letter {
+        color: purple;
+        font-size: 3rem;
+    }
 }

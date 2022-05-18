@@ -7,14 +7,16 @@
 
 .category-list-container {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem;
     flex: 1;
 }
 
 .category-holder {
+    max-width: 50vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -25,11 +27,14 @@
     animation-name: fade-in;
     animation-duration: 1000ms;
     cursor: pointer;
+    flex-grow: 1;
 }
 
 .category-image {
     height: 10rem;
     width: 10rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
     object-fit: cover;
     border-radius: 0% 10% 35% 0% / 10% 10% 100% 10%;
     box-shadow: 2px 0 10px 5px rgba(0, 0, 0, .15);
@@ -52,4 +57,50 @@
     flex: 1.5;
     border-left: 1px solid #80008022;
     background-color: #FAFAFA;
+}
+
+@media screen and (max-width: 1000px){
+    .category-root {
+        flex-direction: column;
+    }
+
+    .category-list-container {
+        width: 100%;
+        padding: unset;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .category-holder {
+        min-width: 90%;
+    }
+
+    .horizontal-row {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .category-description-container {
+        margin-left: 1rem;
+    }
+
+    .category-description-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .category-description-container p {
+        font-size: .9rem;
+        margin-right: .5rem;
+    }
+
+    .category-image {
+        height: 7.5rem;
+        width: 7.5rem;
+        border-radius: 0% 10% 44% 0% / 10% 10% 87% 10%;
+    }
+
+    .category-quotes {
+        margin-left: -1rem;
+    }
 }
