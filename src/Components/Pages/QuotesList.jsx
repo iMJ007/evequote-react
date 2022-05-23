@@ -23,7 +23,9 @@ export default function QuotesList({ updateTitle, updateSubTitle, selectedAuthor
 	const copy = (quote, name) => {
 		toast.current.classList.add("shown");
 		toast.current.innerText = `${name}'s quote copied to clipboard!`;
-		navigator.clipboard.writeText(quote.quote + "\n\n- " + name);
+		if (navigator.clipboard){
+			navigator.clipboard.writeText(quote.quote + "\n\n- " + name);
+		}
 		setTimeout(() => {
 			toast.current.classList.remove("shown");
 		}, 2000);

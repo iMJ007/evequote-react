@@ -20,10 +20,11 @@ export default function QuoteHolder({ quote, index, author, copy }) {
 			onMouseEnter={handleHover}
 			onMouseLeave={handleHoverExit}
 			onClick={(e) => {
+				let view = e.currentTarget;
 				copy(quote, author.name);
 				if (mediaQuery.matches){
 					setTimeout(() => {
-						e.currentTarget.querySelector(".copy").classList.remove("hovered");
+						view.querySelector(".copy").classList.remove("hovered");
 					}, 2000);
 				}
 			}}

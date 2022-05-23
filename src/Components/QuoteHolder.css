@@ -73,4 +73,7 @@ div.copy.hovered {
         padding: 1.5rem;
         margin-left: -.5rem;
     }
+    div.copy {
+        margin-top: -1.55rem;
+    }
 }
