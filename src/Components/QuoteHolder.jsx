@@ -10,13 +10,21 @@ export default function QuoteHolder({ quote, index, author, copy }) {
 		e.currentTarget.querySelector(".copy").classList.remove("hovered");
 	};
 
+	// Create a media condition that targets viewports at least 768px wide
+	const mediaQuery = window.matchMedia("(max-width: 1000px)");
+
 	return (
 		<div
 			key={index}
 			className="quote-card"
 			onMouseEnter={handleHover}
 			onMouseLeave={handleHoverExit}
-			onClick={(e) => copy(quote, author.name)}
+			onClick={(e) => {
+				copy(quote, author.name);
+				if (mediaQuery.matches){
+					e.currentTarget.querySelector(".copy").classList.remove("hovered");
+				}
+			}}
 		>
 			<div className="copy">Click anywhere to copy</div>
 			<p>{quote.quote}</p>
