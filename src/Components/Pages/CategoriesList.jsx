@@ -15,14 +15,16 @@ export default function CategoriesList({ updateTitle, updateSubTitle }) {
 		error,
 	} = useFetch("https://evequote-json-server.herokuapp.com/categories");
 
+	// Create a media condition that targets viewports at least 768px wide
+	const mediaQuery = window.matchMedia("(max-width: 1000px)");
+	
 	useEffect(() => {
 		if (selectedCategory) {
 			if (!categoryListRef.current.classList.contains("horizontal-row")) {
-				// TODO hide author list
 				categoryListRef.current.classList.add("horizontal-row");
 			}
 		}
-	}, [selectedCategory])
+	}, [selectedCategory]);
 
 	return (
 		<div className="category-root">
@@ -32,17 +34,31 @@ export default function CategoriesList({ updateTitle, updateSubTitle }) {
 						? `${selectedCategory.title} Quotes`
 						: "Quote Categories"
 				)}
-			{updateSubTitle && updateSubTitle('')}
+			{updateSubTitle && updateSubTitle("")}
 			<div className="category-list-container" ref={categoryListRef}>
 				{categories &&
 					categories.map((category) => (
-						<div 
-                            key={category.title} 
-                            className="category-holder"
-                            onClick={(e) =>{
-                                setSelectedCategory(category);
-								e.currentTarget.scrollIntoView({behavior: 'smooth', block: 'start'})
-                            }}>
+						<div
+							key={category.title}
+							className="category-holder"
+							onClick={(e) => {
+								setSelectedCategory(category);
+								if (mediaQuery.matches){
+									console.log(mediaQuery.matches)
+									e.currentTarget.scrollIntoView({
+										behavior: "smooth",
+										block: "start",
+									});
+								}
+								setTimeout(() => {
+									document.querySelector('.category-root').scrollIntoView({
+										top: 0,
+										left: 0,
+										behavior: "smooth",
+									});
+								}, 100);
+							}}
+						>
 							<img
 								className="category-image"
 								src={category.imageUrl}

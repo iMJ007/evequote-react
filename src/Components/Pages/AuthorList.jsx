@@ -17,13 +17,13 @@ export default function Authors({ updateTitle, updateSubTitle }) {
 	let [selectedAuthor, setSelectedAuthor] = useState(null);
 
 	useEffect(() => {
-		if (selectedAuthor){
+		if (selectedAuthor) {
 			if (!authorListRef.current.classList.contains("horizontal-row")) {
 				// TODO hide author list
 				authorListRef.current.classList.add("horizontal-row");
 			}
 		}
-	}, [selectedAuthor])
+	}, [selectedAuthor]);
 
 	const handleHover = (e) => {
 		e.currentTarget
@@ -44,6 +44,9 @@ export default function Authors({ updateTitle, updateSubTitle }) {
 		// if (view) view.classList.remove('hovered');
 	};
 
+	// Create a media condition that targets viewports at least 768px wide
+	const mediaQuery = window.matchMedia("(max-width: 1000px)");
+
 	return (
 		<div className="author-root">
 			{updateTitle && !selectedAuthor && updateTitle("Authors")}
@@ -60,15 +63,19 @@ export default function Authors({ updateTitle, updateSubTitle }) {
 								updateTitle(author.name + "'s Quotes");
 								author.authorIndex = index;
 								setSelectedAuthor(author);
-								window.scroll({
-									top: 0,
-									left: 0,
-									behavior: "smooth",
-								});
-								e.currentTarget.scrollIntoView({
-									behavior: "smooth",
-									block: "start",
-								});
+								if (mediaQuery.matches) {
+									e.currentTarget.scrollIntoView({
+										behavior: "smooth",
+										block: "start",
+									});
+								}
+								setTimeout(() => {
+									document.querySelector(".author-root").scrollIntoView({
+										top: 0,
+										left: 0,
+										behavior: "smooth",
+									});
+								}, 100);
 							}}
 						>
 							<img

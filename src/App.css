@@ -40,13 +40,12 @@
   color: #AAA;
   padding: 1em;
   font-size: 1.05rem;
-  font-weight: 300;
+  font-weight: 400;
   transition: 500ms;
 }
 
 .App-nav a:hover {
-  color: #555;
-  font-weight: 600;
+  color: #444;
   transition: 500ms;
 }
 
@@ -55,8 +54,19 @@
   color: purple;
   font-weight: 900;
   transition: 500ms;
+  animation-name: nav-selected;
+  animation-duration: 500ms;
 }
 
+@keyframes nav-selected {
+  from {
+    border-bottom-color: transparent;
+  }
+
+  to {
+    border-bottom-color: #800080;
+  }
+}
 h1 span {
   color: purple;
 }
