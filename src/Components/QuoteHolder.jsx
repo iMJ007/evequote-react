@@ -22,7 +22,9 @@ export default function QuoteHolder({ quote, index, author, copy }) {
 			onClick={(e) => {
 				copy(quote, author.name);
 				if (mediaQuery.matches){
-					e.currentTarget.querySelector(".copy").classList.remove("hovered");
+					setTimeout(() => {
+						e.currentTarget.querySelector(".copy").classList.remove("hovered");
+					}, 2000);
 				}
 			}}
 		>
