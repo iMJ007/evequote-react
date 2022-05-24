@@ -67,6 +67,7 @@ export default function Authors({ updateTitle, updateSubTitle }) {
 									e.currentTarget.scrollIntoView({
 										behavior: "smooth",
 										block: "start",
+										inline: "end"
 									});
 								}
 								setTimeout(() => {

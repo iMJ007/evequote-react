@@ -126,7 +126,9 @@ h1 span {
   } */
 
   .App-title{
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    margin-right: 0;
+    padding-right: 0;
   }
 
   .vertical-side-column {
@@ -161,18 +163,17 @@ h1 span {
   }
 
   .App-header {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0px;
-    padding-right: 0px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
     gap: 0%;
   }
 
   .App-nav {
-    padding-left: 3rem;
+    padding-left: 2.5rem;
     padding-right: 16px;
+    margin-top: .25rem;
     min-width: 100%;
-    overflow-x: auto;
     scrollbar-width: none; /* The most elegant way for Firefox */
   }
 
@@ -189,10 +190,14 @@ h1 span {
   }
 
   .App-nav a {
-    font-size: 1rem;
+    font-size: .95rem;
   }
 
   .social-links {
-    display: none;
+    margin-left: 2rem;
+  }
+
+  .social-links a {
+    font-size: 1rem;
   }
 }
