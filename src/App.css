@@ -104,6 +104,21 @@ h1 span {
   margin-bottom: 1rem;
 }
 
+.social-links {
+    display: flex;
+    gap: 1rem;
+    color: #ccc;
+}
+.social-links a {
+  color: #999;
+  font-size: 1.1rem;
+  transition: 500ms;
+}
+
+.social-links a:hover {
+  color: #800080;
+}
+
 
 @media screen and (max-width: 768px) {
   /* .app-body {
@@ -173,11 +188,11 @@ h1 span {
     background: #00000000;
   }
 
-  .App-header p {
-    display: none;
-  }
-
   .App-nav a {
     font-size: 1rem;
+  }
+
+  .social-links {
+    display: none;
   }
 }
