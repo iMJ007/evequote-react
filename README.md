@@ -13,7 +13,7 @@ You can give me credit by linking back to my website [junaidgandhi.com](https://
 ------------
 
 ### Do you have any questions?
-Please reach out to me via my email - mohammed.junaid1000@gmail.com
+Please reach out to me via my email - contact@junaidgandhi.com
 
 ------------
 
