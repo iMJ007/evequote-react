@@ -18,8 +18,8 @@ Please reach out to me via my email -mohammed.junaid1000@gmail.com
 ------------
 
 ### Follow me:
-- [:fa-codepen:	CodePen](https://codepen.io/IMJ "CodePen")
-- [:fa-twitter:	Twitter](https://twitter.com/MohammedJunaidG "Twitter")
-- [:fa-globe:	Website](https://junaidgandhi.com "Website")
-- [:fa-github:	GitHub](https://github.com/iMJ007 "GitHub")
-- [:fa-linkedin-square:	LinkedIn](https://www.linkedin.com/in/mohammed-junaid-gandhi-31555313b/ "LinkedIn")
+- [CodePen](https://codepen.io/IMJ "CodePen")
+- [Twitter](https://twitter.com/MohammedJunaidG "Twitter")
+- [Website](https://junaidgandhi.com "Website")
+- [GitHub](https://github.com/iMJ007 "GitHub")
+- [LinkedIn](https://www.linkedin.com/in/mohammed-junaid-gandhi-31555313b/ "LinkedIn")
