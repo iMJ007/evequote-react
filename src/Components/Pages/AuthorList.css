@@ -8,11 +8,15 @@
     animation-name: fade-in;
     animation-duration: 1000ms;
     flex: 1;
+    max-height: 90vh;
+    position: sticky;
+    overflow-y: auto;
 }
 
 .author-root {
     display: flex;
     transition: 300ms;
+    /* max-height: 90vh; */
 }
 
 .author-image {

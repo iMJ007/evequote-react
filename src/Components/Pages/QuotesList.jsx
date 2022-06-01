@@ -41,8 +41,9 @@ export default function QuotesList({ updateTitle, updateSubTitle, selectedAuthor
 
 	const breakpointColumnsObj = {
 		default: selectedAuthor ? 3 : selectedCategory ? 2 : 4,
-		1100: 3,
-		700: 1
+		1440: selectedAuthor ? 2 : selectedCategory ? 2 : 3,
+		1024: selectedAuthor ? 1 : selectedCategory ? 1 : 2,
+		700: 1,
 	};
     
 	return (

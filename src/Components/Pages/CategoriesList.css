@@ -1,22 +1,29 @@
 .category-root {
     width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
     display: flex;
     transition: 300ms;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .category-list-container {
     width: 100%;
+    max-height: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem;
     flex: 1;
+    position: sticky;
+    overflow-y: auto;
 }
 
 .category-holder {
-    max-width: 50vh;
+    min-width: 45%;
+    max-width: 45%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -54,9 +61,23 @@
 }
 
 .category-quotes {
+    width: 100%;
+    max-height: 90vh;
+    position:sticky;
     flex: 1.5;
     border-left: 1px solid #80008022;
     background-color: #FAFAFA;
+}
+
+.category-description-container {
+    margin-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media screen and (max-width: 2000px){
+    .category-holder.single-column {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 1000px){
@@ -86,6 +107,7 @@
 
     .category-description-container {
         margin-left: 1rem;
+        padding-right: 1rem;
     }
 
     .category-description-container h2 {
@@ -107,5 +129,8 @@
         margin-left: -1rem;
         border-left: unset;
         margin: auto;
+        width: 100%;
+        max-height: 70vh;
+        position: relative;
     }
 }

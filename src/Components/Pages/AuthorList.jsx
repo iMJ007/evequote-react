@@ -67,16 +67,17 @@ export default function Authors({ updateTitle, updateSubTitle }) {
 									e.currentTarget.scrollIntoView({
 										behavior: "smooth",
 										block: "start",
-										inline: "end"
+										inline: "start"
 									});
 								}
-								setTimeout(() => {
-									document.querySelector(".author-root").scrollIntoView({
-										top: 0,
-										left: 0,
-										behavior: "smooth",
-									});
-								}, 100);
+								// setTimeout(() => {
+								// 	if (!mediaQuery.matches) {
+								// 		document.querySelector(".author-quotes").scrollIntoView({
+								// 			behavior: "smooth",
+								// 			block: "end"
+								// 		});
+								// 	}
+								// }, 1000);
 							}}
 						>
 							<img

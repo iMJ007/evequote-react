@@ -26,6 +26,10 @@ export default function CategoriesList({ updateTitle, updateSubTitle }) {
 		}
 	}, [selectedCategory]);
 
+  useEffect(() => {
+		document.body.style.zoom = "100%";
+	}, []);
+
 	return (
 		<div className="category-root">
 			{updateTitle &&
@@ -40,23 +44,22 @@ export default function CategoriesList({ updateTitle, updateSubTitle }) {
 					categories.map((category) => (
 						<div
 							key={category.title}
-							className="category-holder"
+							className={`category-holder ${selectedCategory ? 'single-column': ''}`}
 							onClick={(e) => {
 								setSelectedCategory(category);
 								if (mediaQuery.matches){
-									console.log(mediaQuery.matches)
 									e.currentTarget.scrollIntoView({
 										behavior: "smooth",
 										block: "start",
+										inline: "start"
 									});
 								}
-								setTimeout(() => {
-									document.querySelector('.category-root').scrollIntoView({
-										top: 0,
-										left: 0,
-										behavior: "smooth",
-									});
-								}, 100);
+								// setTimeout(() => {
+								// 	document.querySelector('.category-quotes').scrollIntoView({
+								// 		behavior: "smooth",
+								// 		block: "start"
+								// 	});
+								// }, 100);
 							}}
 						>
 							<img

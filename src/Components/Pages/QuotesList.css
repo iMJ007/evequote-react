@@ -1,11 +1,13 @@
 .quotes-list-root {
     width: 100%;
+    max-height: 90vh;
+    position: sticky;
     display: flex;
     flex-direction: row;
     justify-content: center;
     animation-name: fade-in;
     animation-duration: 1000ms;
-
+    overflow-y: auto;
 }
 .quotes-list {
     display: -webkit-box;
@@ -16,6 +18,7 @@
     /* gutter size offset */
     width: auto;
 
+    padding-right: 1rem;
     animation-name: fade-in;
     animation-duration: 1000ms;
 }
@@ -76,6 +79,8 @@
 @media screen and (max-width: 768px) {
     .quotes-list-root {
         margin-bottom: 4rem;
+        /* max-height: 60vh; */
+        
     }
     .paginate-button-container {
         position: fixed;

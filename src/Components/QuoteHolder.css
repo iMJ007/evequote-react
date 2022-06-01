@@ -1,7 +1,8 @@
 .quote-card {
     border-radius: 1rem;
     border: 2px dotted rgb(150, 150, 150);
-    width: 25ch;
+    max-width: 100%;
+    /* width: 25ch; */
     font-size: 1.5em;
     padding: 2rem;
     line-height: 3rem;
